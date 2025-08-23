@@ -1,0 +1,12 @@
+/* src/components/Navbar.css */
+.navbar {
+  width: fit-content;
+  display: flex;
+  gap: 1.25rem;
+}
+
+
+.navbar span {
+  color: var(--text-color-light);
+  font-size: 0.875rem;
+}

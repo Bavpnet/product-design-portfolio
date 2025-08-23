@@ -1,0 +1,31 @@
+/* src/components/EducationCard.css */
+.education-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.university-info {
+color: var(--text-color-primary);
+display: flex;
+align-items: center;
+gap: 0.5rem; /* Adjust gap as needed */
+  
+}
+
+.degree-info {
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  line-height: 1.5;
+}
+.vector-square {
+    width: 3px;
+    height: 3px;
+    background-color: #414141;
+    /* Removed margin: 5px 0; as gap in flexbox will handle spacing */
+  }
+
+  @media (max-width: 1024px) {
+    .university-info { flex-wrap: wrap; }  /* "годы" могут уйти на новую строку */
+  }
+  

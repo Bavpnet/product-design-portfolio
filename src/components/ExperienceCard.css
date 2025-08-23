@@ -1,0 +1,56 @@
+/* src/components/ExperienceCard.css */
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.88rem;
+}
+
+.company-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Adjust gap as needed */
+  margin-bottom: 0.5rem;
+}
+
+.company-description {
+  color: var(--text-color-secondary);
+}
+
+
+.vector-square {
+  width: 3px;
+  height: 3px;
+  background-color: #414141;
+  /* Removed margin: 5px 0; as gap in flexbox will handle spacing */
+}
+
+.responsibilities,
+.products-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilities li,
+.product-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.product-item strong {
+  font-weight: 500;
+}
+
+.main-company-info {
+  gap: 0.5rem;
+}
+
+ h4 {
+  margin-bottom: 0.5rem;
+ }
+
+
+ @media (max-width: 1024px) {
+  .company-title { flex-wrap: wrap; }  /* "годы" могут уйти на новую строку */
+}

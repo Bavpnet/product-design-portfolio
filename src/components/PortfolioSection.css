@@ -1,0 +1,31 @@
+/* src/components/PortfolioSection.css */
+.portfolio-section {
+  font-family: Arial, sans-serif;
+  margin-top: 6.25rem; 
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  margin-bottom: 1rem;
+}
+
+.all-projects-link {
+  text-decoration: none;
+  color: var(--text-color-primary);
+  font-weight: 400;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}

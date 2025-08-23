@@ -1,0 +1,33 @@
+/* src/components/HeroSection.css */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 3.125rem; /* 50px */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 50%;
+}
+
+.profile-photo {
+  width: 6.25rem;
+  height: 6.25rem;
+  object-fit: cover;
+}
+
+.hero-title {
+  color: var(--text-color-primary);
+  width: 100%;
+  text-align: left;
+}
+
+.hero-description {
+  color: var(--text-color-primary);
+  width: 100%;
+  text-align: left;
+}

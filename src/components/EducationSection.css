@@ -1,0 +1,33 @@
+/* src/components/EducationSection.css */
+.education-section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns for the overall layout */
+  gap: 1.25rem; /* Gap between grid items */
+  margin-top: 6.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.education-sidebar {
+  grid-column: 1 / span 4; /* Occupies the first 4 columns for the title */
+  text-align: left;
+}
+
+
+.education-content {
+  grid-column: 5 / span 7; /* Starts at column 5 and spans 7 columns (up to column 11) */
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem; /* Gap between education cards */
+}
+
+
+
+
+/* на адаптивах мы отключаем грид — не скрывать сайдбар */
+@media (max-width: 1279px) {
+  .education-section { display: block !important; }
+  .education-sidebar,
+  .education-content { grid-column: auto !important; }
+  .education-sidebar { display: block; margin-bottom: 0.5rem; }
+}
