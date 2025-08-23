@@ -7,7 +7,7 @@ const HeroSection = () => {
     <div className="hero-section">
       {/* Navbar was here, now moved to App.jsx */}
       <div className="content">
-        <img src="/public/profile.png" alt="Profile" className="profile-photo" />
+        <img src="/profile.png" alt="Profile" className="profile-photo" />
         <h1 className="hero-title">
           Привет! Я Саша, продуктовый дизайнер с опытом создания интерфейсов для веб и мобильных платформ
         </h1>

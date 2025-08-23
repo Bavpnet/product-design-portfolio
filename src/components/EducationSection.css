@@ -4,8 +4,6 @@
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns for the overall layout */
   gap: 1.25rem; /* Gap between grid items */
   margin-top: 6.25rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 .education-sidebar {
