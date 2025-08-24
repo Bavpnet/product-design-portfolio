@@ -1,12 +1,27 @@
 /* src/components/PortfolioCard.css */
 .portfolio-card {
   position: relative;
-  width: 100%; /* Will be controlled by grid */
-  padding-bottom: 100%; /* Makes the card square */
-  background-color: #F4F4F4;;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card-image-container {
+  background-color: #F4F4F4;
   border-radius: 1rem;
   overflow: hidden;
-  cursor: pointer;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.aspect-ratio-box {
+  width: 100%;
+  padding-bottom: 75%; /* 4:3 aspect ratio (adjust as needed) */
+  position: relative;
 }
 
 .card-image {
@@ -16,49 +31,38 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.3s ease-in-out;
 }
 
-.portfolio-card:hover .card-image {
-  opacity: 0;
-}
-
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(244, 244, 244, 0.9); /* Lighter overlay to show through */
+.portfolio-card-info-container {
+  padding-top: 0.62rem;
   color: #000;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: flex-start;
-  text-align: left;
-  padding: 1.25rem;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  align-items: center;
 }
 
-.portfolio-card:hover .card-overlay {
-  opacity: 1;
-}
-
-.project-name {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.project-description {
+.project-title-line {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-name-bold {
+  font-weight: 500;
+}
+
+.project-description-text {
+  font-weight: 400;
+  color: var(--text-color-secondary); /* Or a specific gray color */
 }
 
 .vector-square {
   width: 3px;
   height: 3px;
-  background-color: #414141;
-  margin: 5px 0;
+  background-color: var(--text-color-secondary);
+}
+
+.portfolio-column:first-child .portfolio-card:first-child .portfolio-card-image-container {
+  height: 960px;
 }

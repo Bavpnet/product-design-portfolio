@@ -29,10 +29,12 @@ html, body, #root {
 }
 
 a {
-  font-weight: 400;
   color: var(--text-color-light);
   font-size: 1rem;
-  text-decoration: inherit;
+  font-weight: 400;
+  line-height: 1.3rem;
+  letter-spacing: -0.05rem;
+  text-decoration: inherit; 
 }
 
 a:hover {
@@ -85,6 +87,7 @@ descriptor {
   color: var(--text-color-light);
   font-size: 1rem;
   font-weight: 400;
+  font-style: italic;
   line-height: 1.3rem;
   letter-spacing: -0.05rem;
   display: block;        

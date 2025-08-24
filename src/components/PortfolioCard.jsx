@@ -1,27 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './PortfolioCard.css';
 
 const PortfolioCard = ({ project }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <div 
-      className="portfolio-card"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {isHovered ? (
-        <div className="card-overlay">
-          <h3 className="project-name">{project.name}</h3>
-          <div className="project-description">
-            <p>{project.description.text1}</p>
-            <div className="vector-square"></div>
-            <p>{project.description.text2}</p>
-          </div>
+    <div className="portfolio-card">
+      <div className="portfolio-card-image-container">
+        <div className="aspect-ratio-box">
+          <img src={project.image} alt={project.name} className="card-image" />
         </div>
-      ) : (
-        <img src={project.image} alt={project.name} className="card-image" />
-      )}
+      </div>
+      <div className="portfolio-card-info-container">
+        <p className="project-title-line">
+          <span className="project-name-bold">{project.name}</span>
+           <span className="project-description-text">{project.description.text1}</span> <div className="vector-square"></div> 
+            <span className="project-description-text">{project.description.text2}</span> 
+        </p>
+      </div>
     </div>
   );
 };

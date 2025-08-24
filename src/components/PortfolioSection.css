@@ -20,11 +20,24 @@
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr; /* Two columns */
   gap: 10px;
+  align-items: stretch; /* Ensure columns stretch to fill available height */
 }
 
-@media (max-width: 600px) {
+.portfolio-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  height: 100%; /* Ensure column takes full height of grid cell */
+}
+
+.portfolio-column:first-child .portfolio-card:first-child .portfolio-card-image-container {
+  height: 960px;
+}
+
+@media (max-width: 1024px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
   }

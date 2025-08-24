@@ -3,30 +3,28 @@ import './PortfolioSection.css';
 import PortfolioCard from './PortfolioCard';
 
 const projects = [
-  {
-    id: 1,
-    name: 'Project One',
-    image: 'https://via.placeholder.com/300',
-    description: { text1: 'Description 1', text2: 'Detail 1' },
-  },
-  {
-    id: 2,
-    name: 'Project Two',
-    image: 'https://via.placeholder.com/300',
-    description: { text1: 'Description 2', text2: 'Detail 2' },
-  },
-  {
-    id: 3,
-    name: 'Project Three',
-    image: 'https://via.placeholder.com/300',
-    description: { text1: 'Description 3', text2: 'Detail 3' },
-  },
-  {
-    id: 4,
-    name: 'Project Four',
-    image: 'https://via.placeholder.com/300',
-    description: { text1: 'Description 4', text2: 'Detail 4' },
-  },
+  [
+    {
+      id: 1,
+      name: 'SAGA BI',
+      image: 'https://via.placeholder.com/300',
+      description: { text1: 'Web app', text2: '2024 – 2025' },
+    },
+  ],
+  [
+    {
+      id: 2,
+      name: 'Teamforce 360 — redesign',
+      image: '/teamforce.png',
+      description: { text1: 'Mobile app', text2: '2023'},
+    },
+    {
+      id: 3,
+      name: 'Энергоучет',
+      image: 'https://via.placeholder.com/300',
+      description: { text1: 'Web app', text2: '2024 – 2025'},
+    },
+  ],
 ];
 
 const PortfolioSection = () => {
@@ -37,8 +35,12 @@ const PortfolioSection = () => {
         <a href="#" className="all-projects-link">Все проекты</a>
       </div>
       <div className="portfolio-grid">
-        {projects.map((project) => (
-          <PortfolioCard key={project.id} project={project} />
+        {projects.map((column, colIndex) => (
+          <div key={colIndex} className="portfolio-column">
+            {column.map((project) => (
+              <PortfolioCard key={project.id} project={project} />
+            ))}
+          </div>
         ))}
       </div>
     </section>
