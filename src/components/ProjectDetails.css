@@ -1,7 +1,6 @@
 /* src/components/ProjectDetails.css */
 .project-details-section {
   margin-top: 3.75rem;
-  padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns for the overall layout */
   gap: 1.25rem; /* Gap between grid items */

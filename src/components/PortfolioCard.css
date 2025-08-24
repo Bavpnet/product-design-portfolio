@@ -39,18 +39,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1rem;
 }
 
 .project-title-line {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
 
 .project-description-text {
-  color: var(--text-color-secondary); /* Or a specific gray color */
+  color: var(--text-color-secondary);
+  font-size: 1rem; /* Or a specific gray color */
 }
 
 .vector-square-secondary {

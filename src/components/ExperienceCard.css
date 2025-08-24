@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.88rem;
+  overflow: hidden;
 }
 
 .company-title {
@@ -10,6 +11,7 @@
   align-items: center;
   gap: 0.5rem; /* Adjust gap as needed */
   margin-bottom: 0.5rem;
+  overflow: hidden;
 }
 
 .company-description {
