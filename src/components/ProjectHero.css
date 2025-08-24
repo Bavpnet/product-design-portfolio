@@ -1,0 +1,36 @@
+/* src/components/ProjectHero.css */
+.project-hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 3.125rem; /* 50px */
+   /* Adjust as needed */
+}
+
+.project-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem; /* Reduced gap for a tighter feel */
+  width: 100%; /* Full width for content */
+  max-width: 50%; /* Adjust as needed */
+}
+
+.project-hero-title {
+  color: var(--text-color-primary);
+}
+
+.project-hero-description {
+  color: var(--text-color-secondary);
+}
+
+.project-hero-intro {
+  color: var(--text-color-primary);
+}
+
+@media (max-width: 1024px) {
+  .project-hero-content {
+    width: 100%;
+    max-width: none; 
+  }
+}

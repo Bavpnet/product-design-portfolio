@@ -1,18 +1,15 @@
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import PortfolioSection from './components/PortfolioSection'
-import ExperienceSection from './components/ExperienceSection'
-import EducationSection from './components/EducationSection'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProjectPage from './pages/ProjectPage';
 
 function App() {
   return (
-    <main>
-      <Navbar />
-      <HeroSection />
-      <PortfolioSection />
-      <ExperienceSection />
-      <EducationSection />
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:projectId" element={<ProjectPage />} />
+      </Routes>
+    </Router>
   )
 }
 

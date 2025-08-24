@@ -1,0 +1,48 @@
+/* src/components/CaseGrid.css */
+.case-grid-section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns for the overall layout */
+  gap: 1.25rem; /* Gap between grid items */
+  margin-top: 3.75rem;
+  padding: 0 20px; /* Add padding to match hero section */
+}
+
+.case-grid-container {
+  grid-column: 5 / span 7; /* Starts at column 5 and spans 7 columns (up to column 11) */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for images to fill 100% width */
+  gap: 1.25rem;
+}
+
+.case-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.case-item-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem; /* Rounded corners for images */
+}
+
+.case-item-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-primary);
+}
+
+@media (max-width: 1024px) {
+  .case-grid-section {
+    display: block;
+    padding: 0 20px; /* Ensure padding on smaller screens */
+  }
+  .case-grid-container {
+    grid-column: auto;
+  }
+  .case-grid-container {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+}

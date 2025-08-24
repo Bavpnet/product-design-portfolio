@@ -27,3 +27,7 @@
   .experience-content { grid-column: auto !important; }
   .experience-sidebar { display: block; margin-bottom: 0.5rem; }
 }
+
+h2.experience-section-title{
+  font-style: italic !important;
+}

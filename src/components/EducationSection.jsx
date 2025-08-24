@@ -15,7 +15,7 @@ const EducationSection = () => {
   return (
     <section className="education-section">
       <div className="education-sidebar">
-        <descriptor className="education-section-title">Образование</descriptor>
+        <h2 className="education-section-title">Образование</h2>
       </div>
       <div className="education-content">
         {educationData.map((education) => (

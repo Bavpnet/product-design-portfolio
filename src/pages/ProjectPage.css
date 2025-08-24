@@ -1,0 +1,17 @@
+/* src/pages/ProjectPage.css */
+.back-link-container {
+  text-align: left;
+}
+
+
+
+.back-link {
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+
+
+.back-link:hover {
+  text-decoration: none;
+  color: var(--project-accent-color);
+}

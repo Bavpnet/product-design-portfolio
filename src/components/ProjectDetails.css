@@ -1,0 +1,117 @@
+/* src/components/ProjectDetails.css */
+.project-details-section {
+  margin-top: 3.75rem;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns for the overall layout */
+  gap: 1.25rem; /* Gap between grid items */
+}
+
+.project-details-sidebar {
+  grid-column: 1 / span 4; /* Occupies the first 4 columns for the title */
+  text-align: left;
+}
+
+
+.project-detail-block {
+  grid-column: 5 / span 7; /* Starts at column 5 and spans 7 columns (up to column 11) */
+  margin-bottom: 2.5rem;
+}
+
+.project-detail-title {
+  color: var(--text-color-primary);
+  margin-bottom: 1rem;
+}
+
+.project-detail-paragraph {
+  
+  color: var(--text-color-primary);
+ 
+}
+
+.project-detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.project-detail-list-item {
+  color: var(--text-color-primary);
+}
+
+
+
+.analysis-image-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* 1rem gap between image and description */
+}
+
+
+.analysis-additional-list {
+  text-align: left;
+  color: var(--text-color-primary);
+}
+
+.analysis-image-description {
+  color: var(--text-color-secondary);
+  font-size: 1.12rem;
+}
+.analysis-additional-text {
+  color: var(--text-color-secondary);
+}
+
+
+.analysis-additional-text {
+  margin-top: 1rem; /* Gap between previous content and new text */
+}
+
+.analysis-additional-list {
+  margin-top: 0.5rem; /* Smaller gap for list after text */
+}
+
+.analysis-image-container-with-description {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 0.875rem; /* Gap between image and description */
+  margin: 1.25rem 0; /* 20px top and bottom margin for the block */
+}
+
+.analysis-image {
+  width: 100%;
+  border-radius: 1rem;
+  height: auto;
+  display: block;
+}
+
+
+.analysis-image-description {
+  font-size: 1rem;
+}
+
+.analysis-additional-text {
+  margin-top: 1rem;
+  color: var(--text-color-secondary);
+   /* Gap between previous content and new text */
+}
+
+.analysis-additional-list {
+  margin-top: 0.5rem; /* Smaller gap for list after text */
+}
+
+@media (max-width: 1024px) {
+  .project-details-section {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+  .project-details-sidebar,
+  .project-detail-block {
+    grid-column: auto; /* Reset grid column for smaller screens */
+  }
+}
+

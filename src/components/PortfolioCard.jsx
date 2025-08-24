@@ -1,9 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PortfolioCard.css';
 
-const PortfolioCard = ({ project }) => {
+const PortfolioCard = ({ project, accentColor }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (project.id === 2) { // Assuming project with id 2 is Teamforce 360
+      navigate(`/projects/${project.id === 2 ? 'teamforce360' : project.id}`);
+    }
+  };
+
   return (
-    <div className="portfolio-card">
+    <div className="portfolio-card" onClick={handleClick}>
       <div className="portfolio-card-image-container">
         <div className="aspect-ratio-box">
           <img src={project.image} alt={project.name} className="card-image" />
@@ -12,8 +21,8 @@ const PortfolioCard = ({ project }) => {
       <div className="portfolio-card-info-container">
         <p className="project-title-line">
           <span className="project-name-bold">{project.name}</span>
-           <span className="project-description-text">{project.description.text1}</span> <div className="vector-square-secondary"></div> 
-            <span className="project-description-text">{project.description.text2}</span> 
+          <span className="project-description-text">{project.description.text1}</span> <div className="vector-square-secondary" style={{ backgroundColor: accentColor }}></div>
+          <span className="project-description-text">{project.description.text2}</span>
         </p>
       </div>
     </div>

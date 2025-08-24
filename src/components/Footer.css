@@ -1,0 +1,13 @@
+/* src/components/Footer.css */
+.app-footer {
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px; /* Adjust spacing as needed */
+  color: var(--text-color-secondary);
+  border-top: 1px solid #dddddd;
+}
+
+.footer-text {
+  font-size: 1rem;
+  line-height: 1.2rem;
+}

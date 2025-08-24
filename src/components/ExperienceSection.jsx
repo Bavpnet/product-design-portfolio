@@ -42,7 +42,7 @@ const ExperienceSection = () => {
   return (
     <section className="experience-section">
       <div className="experience-sidebar">
-        <descriptor className="experience-section-title">Опыт работы</descriptor>
+        <h2 className="experience-section-title">Опыт работы</h2>
       </div>
       <div className="experience-content">
         {experiences.map((experience) => (

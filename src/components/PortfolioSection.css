@@ -1,6 +1,5 @@
 /* src/components/PortfolioSection.css */
 .portfolio-section {
-  font-family: Arial, sans-serif;
   margin-top: 6.25rem; 
 }
 
@@ -14,8 +13,6 @@
 
 .all-projects-link {
   text-decoration: none;
-  color: var(--text-color-primary);
-  font-weight: 400;
 }
 
 .portfolio-grid {
@@ -33,7 +30,7 @@
   height: 100%; /* Ensure column takes full height of grid cell */
 }
 
-.portfolio-column:first-child .portfolio-card:first-child .portfolio-card-image-container {
+.portfolio-column:first-child .portfolio-card:first-child {
   height: 960px;
 }
 

@@ -48,12 +48,8 @@
   margin-bottom: 0.5rem;
 }
 
-.project-name-bold {
-  font-weight: 500;
-}
 
 .project-description-text {
-  font-weight: 400;
   color: var(--text-color-secondary); /* Or a specific gray color */
 }
 
@@ -64,5 +60,5 @@
 }
 
 .portfolio-column:first-child .portfolio-card:first-child .portfolio-card-image-container {
-  height: 960px;
+  height: 600px;
 }

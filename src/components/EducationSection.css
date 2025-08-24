@@ -29,3 +29,7 @@
   .education-content { grid-column: auto !important; }
   .education-sidebar { display: block; margin-bottom: 0.5rem; }
 }
+
+h2.education-section-title{
+  font-style: italic !important;
+}
