@@ -20,8 +20,7 @@
 .vector-square {
   width: 3px;
   height: 3px;
-  background-color: #414141;
-  /* Removed margin: 5px 0; as gap in flexbox will handle spacing */
+  background-color: var(--text-color-primary);
 }
 
 .responsibilities,

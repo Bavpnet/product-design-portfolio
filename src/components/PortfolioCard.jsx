@@ -12,7 +12,7 @@ const PortfolioCard = ({ project }) => {
       <div className="portfolio-card-info-container">
         <p className="project-title-line">
           <span className="project-name-bold">{project.name}</span>
-           <span className="project-description-text">{project.description.text1}</span> <div className="vector-square"></div> 
+           <span className="project-description-text">{project.description.text1}</span> <div className="vector-square-secondary"></div> 
             <span className="project-description-text">{project.description.text2}</span> 
         </p>
       </div>

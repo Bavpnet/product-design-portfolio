@@ -57,10 +57,10 @@
   color: var(--text-color-secondary); /* Or a specific gray color */
 }
 
-.vector-square {
+.vector-square-secondary {
   width: 3px;
   height: 3px;
-  background-color: var(--text-color-secondary);
+  background-color: var(--text-color-secondary) !important;
 }
 
 .portfolio-column:first-child .portfolio-card:first-child .portfolio-card-image-container {
