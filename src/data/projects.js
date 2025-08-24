@@ -2,7 +2,9 @@ const projectsData = {
   'teamforce360': {
     id: 'teamforce360',
     title: 'Teamforce 360 — redesign',
-    subtitle: 'Запущен ▪ Mobile app ▪ 2023 – 2024',
+    status: 'Запущен',
+    type: 'Mobile app',
+    time: '2023 – 2024',
     intro: 'Teamforce 360 сервис для повышения корпоративной культуры. Можно переводить друг другу виртуальную валюту, покупать мерч и участвовать в корпоративных заданиях.',
     mainImage: '/case portfolio.png',
     detailsSidebarTitle: 'Кейс',

@@ -36,7 +36,7 @@ const ProjectPage = () => {
       <div className="back-link-container" style={{ '--project-accent-color': project.accentColor }}>
         <Link to="/" className="back-link">Вернуться обратно</Link>
       </div>
-      <ProjectHero title={project.title} subtitle={project.subtitle} intro={project.intro} />
+      <ProjectHero title={project.title} status= {project.status} type={project.type} time={project.time} intro={project.intro} />
       {project.mainImage && <ProjectMainImage imageUrl={project.mainImage} altText={project.title} />}
       <ProjectDetails
         introduction={project.introduction}
