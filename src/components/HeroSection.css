@@ -27,7 +27,7 @@
 }
 
 .hero-description {
-  color: var(--text-color-secondary);
+  color: var(--text-color-primary);
   width: 100%;
   text-align: left;
 }
