@@ -61,6 +61,7 @@
 }
 .analysis-additional-text {
   color: var(--text-color-secondary);
+  font-size: 1.12rem;
 }
 
 
