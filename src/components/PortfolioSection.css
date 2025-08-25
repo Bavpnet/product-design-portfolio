@@ -12,6 +12,7 @@
 }
 
 .all-projects-link {
+  color: var(--text-color-primary);
   text-decoration: none;
 }
 
