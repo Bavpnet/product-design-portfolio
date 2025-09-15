@@ -14,7 +14,7 @@
 
 .project-detail-block {
   grid-column: 5 / span 7; /* Starts at column 5 and spans 7 columns (up to column 11) */
-  margin-bottom: 2.5rem;
+  
 }
 
 .project-detail-title {
@@ -22,9 +22,16 @@
   margin-bottom: 1rem;
 }
 
+.project-detail-flow-title {
+  color: var(--text-color-secondary); /* Adjust color as needed */
+  font-size: 1.12rem; /* Adjust font size as needed */
+  margin-bottom: 1.5rem; /* Space below the flow title */
+}
+
 .project-detail-paragraph {
   
   color: var(--text-color-primary);
+  margin-bottom: 1rem; /* Added margin for paragraph interval */
  
 }
 
@@ -32,13 +39,25 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .project-detail-list-item {
+  list-style-type: none; /* Ensure no default bullets */
   color: var(--text-color-primary);
+  margin-bottom: 0.5rem; /* Consistent spacing between list items */
 }
 
+.feedback-analysis-section .project-detail-block {
+  margin-top: 0rem; /* Remove top margin for this specific section */
+}
+
+.project-detail-sublist {
+  list-style: none;
+  padding-left: 2.5rem; /* Increased indentation for sub-list */
+  margin-top: 0.5rem; /* Space above sub-list */
+  margin-bottom: 0.5rem; /* Space below sub-list */
+}
 
 
 .analysis-image-wrapper {
@@ -79,7 +98,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  gap: 0.875rem; /* Gap between image and description */
+  gap: 24px; /* Gap between image and description set to 24px */
   margin: 1.25rem 0; /* 20px top and bottom margin for the block */
 }
 
@@ -95,15 +114,9 @@
   font-size: 1rem;
 }
 
-.analysis-additional-text {
-  margin-top: 1rem;
-  color: var(--text-color-secondary);
-   /* Gap between previous content and new text */
-}
 
-.analysis-additional-list {
-  margin-top: 0.5rem; /* Smaller gap for list after text */
-}
+
+
 
 @media (max-width: 1024px) {
   .project-details-section {

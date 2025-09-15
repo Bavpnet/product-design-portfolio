@@ -46,6 +46,70 @@ const ProjectPage = () => {
         sidebarTitle={project.detailsSidebarTitle}
         onAnalysisImageClick={openModal}
       />
+      {project.currencyTransfer && (
+        <ProjectDetails
+          introduction={project.currencyTransfer}
+          onAnalysisImageClick={openModal}
+          className="currency-transfer-section"
+        />
+      )}
+      {project.currencyTransfer && project.currencyTransfer.intermediateStage && (
+        <ProjectDetails
+          introduction={project.currencyTransfer.intermediateStage}
+          onAnalysisImageClick={openModal}
+          isAdditionalSection={true}
+        />
+      )}
+      {project.currencyTransfer && project.currencyTransfer.finalSolution && (
+        <ProjectDetails
+          introduction={project.currencyTransfer.finalSolution}
+          onAnalysisImageClick={openModal}
+          isAdditionalSection={true}
+        />
+      )}
+      {project.currencyTransfer2 && (
+        <ProjectDetails
+          introduction={project.currencyTransfer2}
+          onAnalysisImageClick={openModal}
+          className="currency-transfer-section"
+          isAdditionalSection={true}
+        />
+      )}
+      {project.colleagueInfo && (
+        <ProjectDetails
+          introduction={project.colleagueInfo}
+          onAnalysisImageClick={openModal}
+          className="currency-transfer-section"
+        />
+      )}
+      {project.colleagueInfo && project.colleagueInfo.finalSolution && (
+        <ProjectDetails
+          introduction={project.colleagueInfo.finalSolution}
+          onAnalysisImageClick={openModal}
+          isAdditionalSection={true}
+        />
+      )}
+      {project.challengeParticipation && (
+        <ProjectDetails
+          introduction={project.challengeParticipation}
+          onAnalysisImageClick={openModal}
+          className="currency-transfer-section"
+        />
+      )}
+      {project.challengeParticipation && project.challengeParticipation.finalSolution && (
+        <ProjectDetails
+          introduction={project.challengeParticipation.finalSolution}
+          onAnalysisImageClick={openModal}
+          isAdditionalSection={true}
+        />
+      )}
+      {project.challengeParticipation && project.challengeParticipation.result && (
+        <ProjectDetails
+          introduction={project.challengeParticipation.result}
+          onAnalysisImageClick={openModal}
+        />
+      )}
+      
       {project.fullWidthImage && <ProjectFullWidthImage imageUrl={project.fullWidthImage} altText="Analysis Structure" />}
       {project.caseStudies && <CaseGrid caseItems={project.caseStudies} onImageClick={openModal} />}
       <Footer />

@@ -1,9 +1,9 @@
 import React from 'react';
 import './ProjectDetails.css';
 
-const ProjectDetails = ({ introduction, tasks, research, analysis, sidebarTitle, onAnalysisImageClick }) => {
+const ProjectDetails = ({ introduction, tasks, research, analysis, sidebarTitle, onAnalysisImageClick, className, isAdditionalSection, result }) => {
   return (
-    <div className="project-details-section">
+    <div className={`project-details-section ${className || ''}`}>
       {sidebarTitle && (
         <div className="project-details-sidebar">
           <h2 className="project-details-sidebar-title">{sidebarTitle}</h2>
@@ -11,10 +11,118 @@ const ProjectDetails = ({ introduction, tasks, research, analysis, sidebarTitle,
       )}
       {introduction && (
         <div className="project-detail-block">
-          <h3 className="project-detail-title">{introduction.title}</h3>
-          {introduction.paragraphs.map((paragraph, index) => (
-            <p key={index} className="project-detail-paragraph">{paragraph}</p>
+          <h3 className={`project-detail-title ${isAdditionalSection ? 'analysis-additional-text' : ''}`}>{introduction.title}</h3>
+          {introduction.flowTitle && (
+            <p className="project-detail-flow-title">{introduction.flowTitle}</p>
+          )}
+          {introduction.paragraphs && introduction.paragraphs.map((paragraph, index) => (
+            <p key={index} className={`project-detail-paragraph ${typeof paragraph === 'object' && paragraph.style === 'secondary' ? 'analysis-additional-text' : ''}`}>
+              {typeof paragraph === 'object' ? paragraph.text : paragraph}
+            </p>
           ))}
+          {introduction.list && (
+            <ul className={`project-detail-list ${isAdditionalSection ? 'analysis-additional-list' : ''}`}>
+              {introduction.list.map((item, index) => (
+                <React.Fragment key={index}>
+                  {typeof item === 'object' && item.subList ? (
+                    <li className="project-detail-list-item">
+                      {item.text}
+                      <ul className="project-detail-sublist">
+                        {item.subList.map((subItem, subIndex) => (
+                          <li key={subIndex} className="project-detail-list-item">{subItem}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li className="project-detail-list-item">{item}</li>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
+          )}
+
+          {introduction.challengeProblem && (
+            <p className="project-detail-paragraph">{introduction.challengeProblem}</p>
+          )}
+          {introduction.challengeImage && (
+            <div className="analysis-image-container-with-description">
+              <img
+                src={introduction.challengeImage}
+                alt="Challenge Problem Image"
+                className="analysis-image"
+                onClick={() => onAnalysisImageClick(introduction.challengeImage)}
+                style={{ cursor: 'pointer' }}
+              />
+            </div>
+          )}
+          {introduction.challengeFeedback && (
+            <div className="challenge-feedback-section">
+              <h3 className={`project-detail-title ${introduction.challengeFeedback.title.style === 'secondary' ? 'analysis-additional-text' : ''}`}>
+                {introduction.challengeFeedback.title.text}
+              </h3>
+              <ul className="project-detail-list">
+                {introduction.challengeFeedback.list.map((item, index) => (
+                  <li key={index} className="project-detail-list-item">{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {introduction.challengeAnalysisText && (
+            <p className="project-detail-paragraph">{introduction.challengeAnalysisText}</p>
+          )}
+          {introduction.challengeAnalysisFeedback && (
+            <div className="challenge-analysis-feedback-section">
+              <h3 className={`project-detail-title ${introduction.challengeAnalysisFeedback.title.style === 'secondary' ? 'analysis-additional-text' : ''}`}>
+                {introduction.challengeAnalysisFeedback.title.text}
+              </h3>
+              <ul className="project-detail-list">
+                {introduction.challengeAnalysisFeedback.list.map((item, index) => (
+                  <li key={index} className="project-detail-list-item">{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {introduction.image && (
+            <div className="analysis-image-container-with-description">
+              <img
+                src={introduction.image}
+                alt="Project Image"
+                className="analysis-image"
+                onClick={() => onAnalysisImageClick(introduction.image)}
+                style={{ cursor: 'pointer' }}
+              />
+              {introduction.imageDescription && (
+                <p className="analysis-image-description">{introduction.imageDescription}</p>
+              )}
+            </div>
+          )}
+          {introduction.paragraphs2 && introduction.paragraphs2.map((paragraph, index) => (
+            <p key={index} className={`project-detail-paragraph ${typeof paragraph === 'object' && paragraph.style === 'secondary' ? 'analysis-additional-text' : ''}`}>
+              {typeof paragraph === 'object' ? paragraph.text : paragraph}
+            </p>
+          ))}
+          
+          {introduction.list2 && (
+            <ul className={`project-detail-list ${isAdditionalSection ? 'analysis-additional-list' : ''}`}>
+              {introduction.list2.map((item, index) => (
+                <React.Fragment key={index}>
+                  {typeof item === 'object' && item.subList ? (
+                    <li className="project-detail-list-item">
+                      {item.text}
+                      <ul className="project-detail-sublist">
+                        {item.subList.map((subItem, subIndex) => (
+                          <li key={subIndex} className="project-detail-list-item">{subItem}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li className="project-detail-list-item">{item}</li>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
+          )}
+        
         </div>
       )}
 
@@ -23,7 +131,20 @@ const ProjectDetails = ({ introduction, tasks, research, analysis, sidebarTitle,
           <h3 className="project-detail-title">{tasks.title}</h3>
           <ul className="project-detail-list">
             {tasks.list.map((item, index) => (
-              <li key={index} className="project-detail-list-item">{item}</li>
+              <React.Fragment key={index}>
+                {typeof item === 'object' && item.subList ? (
+                  <li className="project-detail-list-item">
+                    {item.text}
+                    <ul className="project-detail-sublist">
+                      {item.subList.map((subItem, subIndex) => (
+                        <li key={subIndex} className="project-detail-list-item">{subItem}</li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li className="project-detail-list-item">{item}</li>
+                )}
+              </React.Fragment>
             ))}
           </ul>
         </div>
@@ -37,7 +158,20 @@ const ProjectDetails = ({ introduction, tasks, research, analysis, sidebarTitle,
           ))}
           <ul className="project-detail-list">
             {research.list.map((item, index) => (
+              <React.Fragment key={index}>
+                {typeof item === 'object' && item.subList ? (
+                  <li className="project-detail-list-item">
+                    {item.text}
+                    <ul className="project-detail-sublist">
+                      {item.subList.map((subItem, subIndex) => (
+                        <li key={subIndex} className="project-detail-list-item">{subItem}</li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
               <li key={index} className="project-detail-list-item">{item}</li>
+                )}
+              </React.Fragment>
             ))}
           </ul>
         </div>
@@ -51,7 +185,20 @@ const ProjectDetails = ({ introduction, tasks, research, analysis, sidebarTitle,
           ))}
           <ul className="project-detail-list">
             {analysis.list.map((item, index) => (
+              <React.Fragment key={index}>
+                {typeof item === 'object' && item.subList ? (
+                  <li className="project-detail-list-item">
+                    {item.text}
+                    <ul className="project-detail-sublist">
+                      {item.subList.map((subItem, subIndex) => (
+                        <li key={subIndex} className="project-detail-list-item">{subItem}</li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
               <li key={index} className="project-detail-list-item">{item}</li>
+                )}
+              </React.Fragment>
             ))}
           </ul>
           {analysis.image && (
@@ -101,6 +248,36 @@ const ProjectDetails = ({ introduction, tasks, research, analysis, sidebarTitle,
                 <p className="analysis-image-description">{analysis.secondAnalysisImageDescription}</p>
               )}
             </div>
+          )}
+        </div>
+      )}
+      {result && (
+        <div className="project-detail-block">
+          <h3 className="project-detail-title">{result.title}</h3>
+          {result.listTitle && (
+            <p className="project-detail-paragraph">
+              {result.listTitle.text}
+            </p>
+          )}
+          {result.list && (
+            <ul className="project-detail-list">
+              {result.list.map((item, index) => (
+                <React.Fragment key={index}>
+                  {typeof item === 'object' && item.subList ? (
+                    <li className="project-detail-list-item">
+                      {item.text}
+                      <ul className="project-detail-sublist">
+                        {item.subList.map((subItem, subIndex) => (
+                          <li key={subIndex} className="project-detail-list-item">{subItem}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li className="project-detail-list-item">{item}</li>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
           )}
         </div>
       )}
