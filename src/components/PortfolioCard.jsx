@@ -6,9 +6,7 @@ const PortfolioCard = ({ project, accentColor }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (project.id === 2) { // Assuming project with id 2 is Teamforce 360
-      navigate(`/projects/${project.id === 2 ? 'teamforce360' : project.id}`);
-    }
+    navigate(`/projects/${project.id}`);
   };
 
   return (

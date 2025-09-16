@@ -5,7 +5,7 @@ import PortfolioCard from './PortfolioCard';
 const projects = [
   [
     {
-      id: 1,
+      id: 'sagaBI',
       name: 'SAGA BI',
       image: 'https://via.placeholder.com/300',
       description: { text1: 'Web app', text2: '2024 – 2025' },
@@ -14,14 +14,14 @@ const projects = [
   ],
   [
     {
-      id: 2,
+      id: 'teamforce360',
       name: 'Teamforce 360 — redesign',
       image: '/teamforce.png',
       description: { text1: 'Mobile app', text2: '2023'},
       accentColor: '#F15929', // Specific color for Teamforce 360
     },
     {
-      id: 3,
+      id: 'energo',
       name: 'Энергоучет',
       image: '/energo.png',
       description: { text1: 'Web app', text2: '2024 – 2025'},
